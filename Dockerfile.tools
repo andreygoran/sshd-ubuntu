@@ -1,0 +1,11 @@
+ARG UBUNTU_VERSION
+
+FROM ubuntu:${UBUNTU_VERSION}
+
+RUN apt-get update && \
+    apt-get install -y openssh-server openssh-client nano less vim jq net-tools iproute2 netcat dnsutils curl wget iputils-ping iptables nmap tcpdump telnet && \
+    yes | unminimize
+
+COPY entrypoint.sh ./entrypoint.sh
+RUN chmod +x ./entrypoint.sh
+ENTRYPOINT ["./entrypoint.sh"]

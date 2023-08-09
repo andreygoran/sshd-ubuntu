@@ -1,0 +1,7 @@
+push-image*.sh
+run.sh
+
+terraform-*/.terraform/
+terraform-*/.terraform*
+terraform-*/terraform.*
+terraform-*/apply.sh
